@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Big Emoji Hover</title>
+  <style>
+    .emoji-container {
+      display: flex; 
+      gap: 20px; 
+      justify-content: center; 
+      margin-top: 100px;
+    }
+    .emoji {
+      font-size: 100px; 
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .emoji:hover {
+      transform: scale(1.3); 
+    }
+  </style>
+</head>
+<body>
+  <div class="emoji-container">
+    <span class="emoji" data-emoji="😊">😊</span>
+    <span class="emoji" data-emoji="😂">😂</span>
+    <span class="emoji" data-emoji="😍">😍</span>
+    <span class="emoji" data-emoji="😎">😎</span>
+    <span class="emoji" data-emoji="🤔">🤔</span>
+  </div>
+  <script>
+    const emojis = ['😊', '😂', '😍', '😎', '🤔', '😜', '🤯', '🙃', '😇', '😡'];
+    document.querySelectorAll('.emoji').forEach((emojiElement) => {
+      emojiElement.addEventListener('mouseover', () => {
+        const randomIndex = Math.floor(Math.random() * emojis.length);
+        emojiElement.textContent = emojis[randomIndex];
+      });
+    });
+  </script><br><br><br>
+  <h4 style="text-align: center">moving mouse on big emoji😊😊😊</h4>
+</body>
+</html>
